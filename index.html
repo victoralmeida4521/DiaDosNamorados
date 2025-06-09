@@ -11,22 +11,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<<body>
     <!-- Player de música minimalista e elegante -->
         
     
     <div class="container">
         <h1>Feliz Dia dos Namorados!</h1>
-        <div class="main-message" id="mainMessage">
-            <!-- Mensagem especial aqui -->
-            As vezes quando eu fico te encarando sem dizer nada, eu simplesmente não deixo de 
-            me fascinar com o acaso de termos nos encontrado e tudo ser tão bom e simples, cada dia com você
-            é um presente de deus pra mim, eu vivia muito bem sozinho mas agora que tenho você, minha definição de viver bem é completamente diferente
-
-        </div>
+        
 
         <div class="carousel" id="carousel">
-            <img class="carousel-image" id="carouselImage" src="img/foto1.jpeg" alt="Imagem romântica">
+            <img class="carousel-image" id="carouselImage" src="img/foto2.jpeg" alt="Imagem romântica">
             <div class="carousel-content">
                 <div class="carousel-title" id="carouselTitle">Momentos Felizes</div>
                 <div class="carousel-message" id="carouselMessage">Cada sorriso seu é um presente para mim.</div>
@@ -36,7 +30,13 @@
                 <button class="carousel-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
             </div>
         </div>
-<div class="music-player-minimal mt-4 p-2 rounded-4" style="max-width: 220px; margin: 0 auto; background: var(--color-background); border: 2px solid var(--color-primary);">
+<div class="main-message" id="mainMessage">
+            <!-- Mensagem especial aqui -->
+            As vezes quando eu fico te encarando sem dizer nada, eu simplesmente não deixo de 
+            me fascinar com o acaso de termos nos encontrado e tudo ser tão bom e simples, cada dia com você
+            é um presente de deus pra mim, eu vivia muito bem sozinho mas agora que tenho você, minha definição de viver bem é completamente diferente
+
+        </div><div class="music-player-minimal mt-4 p-2 rounded-4" style="max-width: 220px;margin: 0 auto;background: var(--color-background);border: 2px solid var(--color-primary);">
             <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
                 <button id="prevMusic" class="btn-music-minimal" aria-label="Anterior">
                     <i class="bi bi-skip-backward-fill"></i>
@@ -72,9 +72,9 @@
             <div class="counter-values" id="counterValues">
                 <div class="counter-item"><span id="months">3</span> meses</div>
                 <div class="counter-item"><span id="days">17</span> dias</div>
-                <div class="counter-item"><span id="hours">20</span> horas</div>
-                <div class="counter-item"><span id="minutes">32</span> min</div>
-                <div class="counter-item"><span id="seconds">52</span> seg</div>
+                <div class="counter-item"><span id="hours">22</span> horas</div>
+                <div class="counter-item"><span id="minutes">10</span> min</div>
+                <div class="counter-item"><span id="seconds">58</span> seg</div>
             </div>
         </div>
 
@@ -119,5 +119,44 @@
 	// ]]>
 </script>
 
-</div></body>
+</div><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body>
 </html>
