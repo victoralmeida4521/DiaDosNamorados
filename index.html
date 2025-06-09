@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<<body>
-    <!-- Player de música minimalista e elegante -->
+<body>
+    
         
     
     <div class="container">
@@ -22,8 +22,10 @@
         <div class="carousel" id="carousel">
             <img class="carousel-image" id="carouselImage" src="img/foto2.jpeg" alt="Imagem romântica">
             <div class="carousel-content">
-                <div class="carousel-title" id="carouselTitle">Momentos Felizes</div>
-                <div class="carousel-message" id="carouselMessage">Cada sorriso seu é um presente para mim.</div>
+                <div class="carousel-title" id="carouselTitle">Primeiro dia dos namorados</div>
+                <div class="carousel-message" id="carouselMessage">de muitos que ainda estão por vir
+
+				</div>
             </div>
             <div class="carousel-controls">
                 <button class="carousel-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
@@ -32,9 +34,9 @@
         </div>
 <div class="main-message" id="mainMessage">
             <!-- Mensagem especial aqui -->
-            As vezes quando eu fico te encarando sem dizer nada, eu simplesmente não deixo de 
-            me fascinar com o acaso de termos nos encontrado e tudo ser tão bom e simples, cada dia com você
-            é um presente de deus pra mim, eu vivia muito bem sozinho mas agora que tenho você, minha definição de viver bem é completamente diferente
+            As vezes quando eu fico te encarando sem dizer nada, eu simplesmente estou admirando sua beleza e pensando em como é incrível por acaso do destino termos nos encontrado e tudo ser tão bom e simples,
+			 cada dia com você
+            é um presente de deus pra mim, eu sempre vivi muito bem sozinho mas agora que tenho você, minha definição de viver bem é completamente diferente e viver sozinho não é mais uma opção
 
         </div><div class="music-player-minimal mt-4 p-2 rounded-4" style="max-width: 220px;margin: 0 auto;background: var(--color-background);border: 2px solid var(--color-primary);">
             <div class="d-flex align-items-center justify-content-center gap-2 mb-2">
@@ -81,7 +83,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 <!-- Code injected by live-server -->
-<script>
+<!-- <script>
 	// <![CDATA[  <-- For SVG support
 	if ('WebSocket' in window) {
 		(function () {
@@ -117,46 +119,10 @@
 		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
 	}
 	// ]]>
-</script>
+</script> -->
 
-</div><!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+</div>
+
 
 </body>
 </html>

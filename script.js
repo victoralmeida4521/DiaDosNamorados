@@ -2,22 +2,22 @@
 const carouselData = [
     {
         image: "img/foto2.jpeg",
-        title: "Momentos Felizes",
-        message: "Cada sorriso seu é um presente para mim."
+        title: "Nosso primeiro dia dos namorados",
+        message: "De muitos outros que virão ao seu lado"
     },
     {
         image: "img/foto1.jpeg",
-        title: "Momentos Felizes",
-        message: "Cada sorriso seu é um presente para mim."
+        title: "Amo cada segundo ao seu lado",
+        message: "Minha maior vontade é colecinar lembranças com você"
     },
     {
         image: "img/foto3.jpeg",
-        title: "Momentos Felizes",
-        message: "Cada sorriso seu é um presente para mim."
+        title: "E colecionar muitas tabaquices também",
+        message: ""
     },
     {
         image: "img/foto4.jpeg",
-        title: "Momentos Felizes",
+        title: "Eu te amo muito",
         message: "Cada sorriso seu é um presente para mim."
     }
 ];
@@ -40,7 +40,7 @@ updateCarousel();
 let carouselInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % carouselData.length;
     updateCarousel();
-}, 6000);
+}, 15000);
 
 // Botões de navegação
 document.getElementById('prevBtn').onclick = function() {
@@ -109,7 +109,7 @@ updateCounter();
 const musicas = [
     "d4vid-Feel-it.mp3",
     "Reginaldo Rossi - A Raposa e as Uvas.mp3",
-    "Chezile-Beanie.mp3",
+    
     
     // Adicione mais nomes de arquivos conforme necessário
 ];
