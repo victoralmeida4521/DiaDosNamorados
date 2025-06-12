@@ -40,7 +40,7 @@ updateCarousel();
 let carouselInterval = setInterval(() => {
     currentIndex = (currentIndex + 1) % carouselData.length;
     updateCarousel();
-}, 15000);
+}, 10000);
 
 // Botões de navegação
 document.getElementById('prevBtn').onclick = function() {
@@ -107,8 +107,8 @@ updateCounter();
 
 // Lista de músicas (adicione aqui os nomes dos arquivos que colocar na pasta 'musicas')
 const musicas = [
-    "d4vid-Feel-it.mp3",
-    "Reginaldo Rossi - A Raposa e as Uvas.mp3",
+    "d4vid-Feel-it.mp3"
+    
     
     
     // Adicione mais nomes de arquivos conforme necessário
@@ -117,13 +117,12 @@ const musicas = [
 let currentMusic = 0;
 const audioPlayer = document.getElementById('audioPlayer');
 const audioSource = document.getElementById('audioSource');
-const musicTitle = document.getElementById('musicTitle');
-const playPauseBtn = document.getElementById('playPause');
-const playPauseIcon = document.getElementById('playPauseIcon');
-const progressBar = document.getElementById('progressBar');
-const currentTimeEl = document.getElementById('currentTime');
-const durationEl = document.getElementById('duration');
-const volumeBar = document.getElementById('volumeBar');
+const playPauseBtn = document.getElementById('mpcPlayPause');
+const playPauseIcon = document.getElementById('mpcPlayPauseIcon');
+const progressBar = document.getElementById('mpcProgressBar');
+const currentTimeSpan = document.getElementById('mpcCurrentTime');
+const durationSpan = document.getElementById('mpcDuration');
+// const volumeBar = document.getElementById('volumeBar');
 
 function updateMusic() {
     audioSource.src = "musicas/" + musicas[currentMusic];
@@ -131,23 +130,24 @@ function updateMusic() {
     musicTitle.textContent = musicas[currentMusic];
     playPauseIcon.className = "bi bi-play-fill";
     progressBar.value = 0;
-    currentTimeEl.textContent = "0:00";
-    durationEl.textContent = "0:00";
+    currentTimeSpan.textContent = "0:00";
+    durationSpan.textContent = "0:00";
 }
 audioPlayer.addEventListener('loadedmetadata', function() {
-    durationEl.textContent = formatTime(audioPlayer.duration);
+    durationSpan.textContent = formatTime(audioPlayer.duration);
 });
 audioPlayer.addEventListener('timeupdate', function() {
     progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100 || 0;
-    currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
+    currentTimeSpan.textContent = formatTime(audioPlayer.currentTime);
+    durationSpan.textContent = formatTime(audioPlayer.duration);
 });
 progressBar.addEventListener('input', function() {
     audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
 });
-volumeBar.addEventListener('input', function() {
-    audioPlayer.volume = volumeBar.value;
-});
-playPauseBtn.onclick = function() {
+// volumeBar.addEventListener('input', function() {
+//     audioPlayer.volume = volumeBar.value;
+// });
+playPauseBtn.addEventListener('click', function() {
     if (audioPlayer.paused) {
         audioPlayer.play();
         playPauseIcon.className = "bi bi-pause-fill";
@@ -155,7 +155,7 @@ playPauseBtn.onclick = function() {
         audioPlayer.pause();
         playPauseIcon.className = "bi bi-play-fill";
     }
-};
+});
 audioPlayer.addEventListener('play', function() {
     playPauseIcon.className = "bi bi-pause-fill";
 });
@@ -178,10 +178,10 @@ document.getElementById('nextMusic').onclick = function() {
     audioPlayer.play();
 };
 function formatTime(sec) {
-    sec = Math.floor(sec);
+    if (isNaN(sec)) return "0:00";
     const m = Math.floor(sec / 60);
-    const s = sec % 60;
-    return m + ":" + (s < 10 ? "0" : "") + s;
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
 }
 updateMusic();
 
@@ -196,9 +196,7 @@ style.textContent = `
     font-size: 1.2rem !important;
     padding: 0.1rem 0.4rem !important;
 }
-#progressBar, #volumeBar {
-    height: 3px !important;
-}
+
 #musicTitle {
     font-size: 1rem !important;
 }

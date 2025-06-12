@@ -113,7 +113,7 @@ h1 {
     background: var(--color-buttonEffect);
 }
 .counter {
-    margin-top: 32px;
+    margin-top: 0px;
     background: var(--color-white);
     border-radius: 12px;
     padding: 20px 16px;
@@ -145,19 +145,145 @@ h1 {
     margin: 0 auto 32px auto;
     padding: 0.7rem 0.5rem !important;
 }
+.music-player-spotify {
+    max-width: 340px;
+    margin: 24px auto;
+    background: #181818;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    padding: 20px 18px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+.music-player-compact {
+    display: flex;
+    align-items: center;
+    background: #cb7474;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 12px 18px;
+    max-width: 420px;
+    margin: 24px auto;
+    color: #fff;
+    gap: 16px;
+}
+.music-cover {
+    width: 120px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.music-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mpc-cover img {
+    width: 149px;
+    height: 153px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+.music-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.music-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+.mpc-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+}
+.music-artist {
+    font-size: 0.95rem;
+    color: #b3b3b3;
+}
+.mpc-artist {
+    font-size: 0.92rem;
+    color: #b3b3b3;
+    margin-bottom: 4px;
+}
+.music-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 10px 0 8px 0;
+}
+.mpc-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2px;
+}
 .btn-music-minimal {
-    background: var(--color-white);
+    background: none;
     border: none;
-    color: var(--color-primary);
-    font-size: 1.2rem !important;
+    color: #fff;
+    font-size: 1.6rem;
     border-radius: 50%;
-    padding: 0.1rem 0.4rem !important;
+    transition: background 0.2s, color 0.2s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-music-minimal:focus, .btn-music-minimal:hover {
+    background: #282828;
+    color: #1db954;
+    outline: none;
+}
+.mpc-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background 0.2s, color 0.2s;
 }
-.btn-music-minimal:hover, .btn-music-minimal:focus {
-    background: var(--color-primary);
-    color: #fff;
+.mpc-btn:focus, .mpc-btn:hover {
+    background: #cb7474;
+    color: #1db954;
     outline: none;
+}
+.music-progress {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+.music-progress input[type="range"] {
+    flex: 1;
+    accent-color: #1db954;
+    height: 4px;
+    border-radius: 2px;
+}
+.music-time {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+    min-width: 38px;
+    text-align: center;
+}
+.mpc-time {
+    font-size: 0.82rem;
+    min-width: 34px;
+    color: #b3b3b3;
 }
 #progressBar, #volumeBar {
     accent-color: var(--color-primary);
@@ -254,4 +380,84 @@ h1 {
     .counter {
         font-size: 1rem;
     }
+}
+
+/* Barra de progresso do player compacto - corrigida */
+.mpc-progress-row input[type="range"]#mpcProgressBar {
+    -webkit-appearance: none;
+    width: 100%;
+    min-width: 80px;
+    max-width: 180px;
+    height: 6px;
+    background: #444;
+    border-radius: 3px;
+    outline: none;
+    accent-color: #1db954;
+    margin: 0 6px;
+    vertical-align: middle;
+    position: relative;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    box-shadow: 0 0 2px #222;
+    border: 2px solid #fff;
+    margin-top: -5px; /* Alinha a bola ao centro da barra */
+    transition: background 0.2s;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar:focus::-webkit-slider-thumb {
+    background: #1ed760;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    box-shadow: 0 0 2px #222;
+    border: 2px solid #fff;
+    transition: background 0.2s;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1db954;
+    cursor: pointer;
+    box-shadow: 0 0 2px #222;
+    border: 2px solid #fff;
+    transition: background 0.2s;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #444;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-ms-fill-lower,
+.mpc-progress-row input[type="range"]#mpcProgressBar::-ms-fill-upper {
+    background: #444;
+    border-radius: 3px;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar:focus {
+    outline: none;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-moz-range-track {
+    height: 6px;
+    border-radius: 3px;
+    background: #444;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar::-ms-tooltip {
+    display: none;
+}
+.mpc-progress-row input[type="range"]#mpcProgressBar:active::-webkit-slider-thumb {
+    background: #1ed760;
+}
+/* Firefox fix */
+.mpc-progress-row input[type="range"]#mpcProgressBar {
+    background: #444;
 }
